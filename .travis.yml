@@ -1,0 +1,19 @@
+language: node_js
+
+sudo: false
+
+cache:
+  apt: true
+  directories:
+    - node_modules
+
+node_js: stable
+
+install:
+  - npm install -D
+  - cd ./test/smoke/冒烟测试项目的目录
+  - npm install -D
+  - cd ../../../ 
+
+scripts:
+  - npm test # 注意这里没run 建议从用例开始跑完事在打包
